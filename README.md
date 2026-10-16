@@ -1,5 +1,4 @@
-# Calculator - Main Version
-
+# Calculator - Main Version (Feature Enhanced)
 ## Purpose
 
 A simple command-line calculator written in Python, created as part of **CS-108 Lab 06** to practice the Git and GitHub workflow — including commits, branching, pull requests, code review, and merge conflict resolution.
