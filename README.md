@@ -1,4 +1,4 @@
-# Lab06 Calculator
+# Calculator - Feature Version
 
 ## Purpose
 
