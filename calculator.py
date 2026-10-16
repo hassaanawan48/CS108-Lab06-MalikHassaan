@@ -1,3 +1,5 @@
+import math
+
 def add(a, b):
     """Return the sum of a and b."""
     return a + b
@@ -26,14 +28,29 @@ def modulus(a, b):
         return "Error: Modulus by zero"
     return a % b
 
+def square_root(a, b=None):
+    """Return the square root of a. Second argument is ignored."""
+    if a < 0:
+        return "Error: Cannot take square root of a negative number"
+    return math.sqrt(a)
+
+def percentage(a, b):
+    """Return what percent a is of b."""
+    if b == 0:
+        return "Error: Cannot compute percentage with zero base"
+    return (a / b) * 100
+
 def main():
     print("=== Simple Calculator ===")
-    print("Operations: +, -, *, /, ^ (power), % (modulus)")
+    print("Operations: +, -, *, /, ^ (power), % (modulus), sqrt, pct")
 
     try:
         num1 = float(input("Enter first number: "))
-        op = input("Enter operator (+, -, *, /, ^, %): ").strip()
-        num2 = float(input("Enter second number: "))
+        op = input("Enter operator (+, -, *, /, ^, %, sqrt, pct): ").strip().lower()
+        if op in ("sqrt",):
+            num2 = 0  # not needed
+        else:
+            num2 = float(input("Enter second number: "))
     except ValueError:
         print("Invalid input. Please enter numbers only.")
         return
@@ -45,6 +62,8 @@ def main():
         "/": divide,
         "^": power,
         "%": modulus,
+        "sqrt": square_root,
+        "pct": percentage,
     }
 
     if op not in operations:
